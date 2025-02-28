@@ -112,9 +112,53 @@ console.log(str)
   }
   */
 
-  const str = "Frontend Simplified"
+ /**  const str = "Frontend Simplified"
   for (let i = 0; i < str.length; ++i) {
     console.log(str[i])
   }
 
 "Frontend Simplified".length
+*/
+
+// DRY - Don't Repeat Yourself
+
+//Function definition (can define function once)
+/**function welcomePersonToFES(firstName, lastName) {
+  console.log(`Welcome to FES, ${firstName} ${lastName}`)
+}
+
+//call the function (can call function multiple times)
+welcomePersonToFES('David', "Bragg")
+welcomePersonToFES("john", "Doe")
+*/
+
+/** function fn() {
+  return "my return" //exits the function completely
+  console.log("my function")
+}
+
+fn()
+
+function sumOfTwoNumbers(num1, num2) {
+  return num1 + num2
+}
+  */
+
+//console.log(sumOfTwoNumbers(10,10));
+
+/**function convertCelsiusToFahrenheit(celsius) {
+  return celsius * 1.8 + 32
+}
+
+console.log(convertCelsiusToFahrenheit(0))
+console.log(convertCelsiusToFahrenheit(16))
+
+F = C * 1.8 + 32
+*/
+
+const convertCelsiusToFahrenheit = (celsius) => {
+  return celsius * 1.89 + 32
+}
+
+console.log(convertCelsiusToFahrenheit(0))
+console.log(convertCelsiusToFahrenheit(10))
