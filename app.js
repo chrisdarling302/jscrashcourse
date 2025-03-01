@@ -172,7 +172,7 @@ console.log(convertCelsiusToFahrenheit(0))
 //ARRAYS
 
 
-
+//array filter method...
 // arr.filter(() => {}) Need to memorize the syntax
 /**let newArr = arr.filter((element) => {
   console.log(element)
@@ -184,7 +184,7 @@ console.log(convertCelsiusToFahrenheit(0))
 console.log(newArr)
 */
 //let arr = [20, 30, 40, 50, 100]
-//remove (around element when there's only one variable)
+//remove "("around element when there's only one variable type)
 /**let newArr = arr.filter(element => {
   //console.log(element) get rid of this because it's doing nothing
   return element < 50 
@@ -200,13 +200,74 @@ console.log(newArr)
 console.log(newArr)
 */
 
-let grades = ['A=', 'A', 'FAIL']
+//let grades = ['A+', 'A', 'FAIL']
 
 //let goodGrades = grades.filter(element => element !== 'FAIL')
 
-
 //console.log(goodGrades)
 
+//done without using filter method, push to new array method by indexing the array
+/**let grades = ['A+', 'A', 'FAIL']
+let goodGrades = []
+
 for (let i = 0; i < grades.length; ++i) {
-  console.log(grades[i]);
+  if (grades[i] !== 'FAIL') {
+    goodGrades.push(grades[i]);
+  }
 }
+
+console.log(goodGrades);
+*/
+
+// arr.map method.
+// it accepts a callback that looks like this: arr.map(() => {})
+
+/**let arr = [1, 4, 9, 16]
+
+let newArray = arr.map((element) => {
+  console.log(element)
+  return undefined;
+})
+
+console.log(newArray)
+*/
+
+//here's how to turn it into one line of code:
+/**let arr = [1, 4, 9, 16]
+
+let newArray = arr.map(element => undefined)
+
+console.log(newArray)
+*/
+
+/** Long Way for arr.map
+let dollars = [1, 5, 10, 3]
+
+let dollarsToCents = dollars.map((element) => {
+  console.log(element)
+  return element * 100
+})
+
+console.log(dollarsToCents)
+*/
+
+//short way for arr.map
+/** 
+let dollars = [1, 5, 10, 3]
+
+let dollarsToCents = dollars.map(element => element * 100)
+
+console.log(dollarsToCents)
+*/
+//now use the for method
+
+/** 
+let dollars = [1, 5, 10, 3]
+let cents = [];
+
+for (let i = 0; i < dollars.length; ++i) {
+    cents.push(dollars[i] * 100);
+}
+
+console.log(cents);
+*/
