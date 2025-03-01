@@ -156,9 +156,57 @@ console.log(convertCelsiusToFahrenheit(16))
 F = C * 1.8 + 32
 */
 
-const convertCelsiusToFahrenheit = (celsius) => {
-  return celsius * 1.89 + 32
+//function convertCelsiusToFahrenheit(celsius) {
+ // return celsius * 1.87 + 32
+//}
+
+//console.log(convertCelsiusToFahrenheit(0));
+
+/**const convertCelsiusToFahrenheit = (celsius) => {
+  return celsius * 1.8 + 32
 }
 
 console.log(convertCelsiusToFahrenheit(0))
-console.log(convertCelsiusToFahrenheit(10))
+*/
+
+//ARRAYS
+
+
+
+// arr.filter(() => {}) Need to memorize the syntax
+/**let newArr = arr.filter((element) => {
+  console.log(element)
+  if (element < 50) {
+    return true;
+  }
+})
+
+console.log(newArr)
+*/
+//let arr = [20, 30, 40, 50, 100]
+//remove (around element when there's only one variable)
+/**let newArr = arr.filter(element => {
+  //console.log(element) get rid of this because it's doing nothing
+  return element < 50 
+  })
+
+console.log(newArr)
+*/
+
+/**let newArr = arr.filter(element => element < 50)
+  //console.log(element) get rid of this because it's doing nothing
+
+
+console.log(newArr)
+*/
+
+let grades = ['A=', 'A', 'FAIL']
+
+//let goodGrades = grades.filter(element => element !== 'FAIL')
+
+
+//console.log(goodGrades)
+
+for (let i = 0; i < grades.length; ++i) {
+  console.log(grades[i]);
+}
