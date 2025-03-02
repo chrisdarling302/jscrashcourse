@@ -35,7 +35,7 @@ else {
   console.log("falsy value")
 }
 */
-// the isStoreOpen === true is the same as isStoreOpen because isStoreOpen is a Boolean in and of itself. 
+// the isStoreOpen === true is the same as isStoreOpen because isStoreOpen is a Boolean in and of itself.
 // want to check if the opposite is true use "!" !isStoreOpen
 
 /**let val = "David"
@@ -69,8 +69,8 @@ console.log(str)
 //let count = 1
 
 //while (count <=100) {
- // count = count + 1;
- // console.log(count)
+// count = count + 1;
+// console.log(count)
 //}
 
 /**for (let i = 0; i < 100; i++) {
@@ -83,7 +83,7 @@ console.log(str)
  * if the number is divisible by 5, print "Simplified"
  * If the number is difivisble by 3 and 5, print "Frontend Simplified"
  * If the number is *not* divisible by either 3 or 5, print the number
- * 
+ *
  * example
  * 1 -> 1
  * 2 -> 2
@@ -112,7 +112,7 @@ console.log(str)
   }
   */
 
- /**  const str = "Frontend Simplified"
+/**  const str = "Frontend Simplified"
   for (let i = 0; i < str.length; ++i) {
     console.log(str[i])
   }
@@ -157,7 +157,7 @@ F = C * 1.8 + 32
 */
 
 //function convertCelsiusToFahrenheit(celsius) {
- // return celsius * 1.87 + 32
+// return celsius * 1.87 + 32
 //}
 
 //console.log(convertCelsiusToFahrenheit(0));
@@ -170,7 +170,6 @@ console.log(convertCelsiusToFahrenheit(0))
 */
 
 //ARRAYS
-
 
 //array filter method...
 // arr.filter(() => {}) Need to memorize the syntax
@@ -273,15 +272,15 @@ console.log(cents);
 */
 
 //OBJECTS
-
+/** 
 let users = [
   {
-  username: "David",
-  email: "david@fes.com",
-  password: "test123",
-  subscriptionStatus: "VIP",
-  discordId: "david bragg001",
-  lessonsCompleted: [0, 1, 2, 3],
+    username: "David",
+    email: "david@fes.com",
+    password: "test123",
+    subscriptionStatus: "VIP",
+    discordId: "david bragg001",
+    lessonsCompleted: [0, 1, 2, 3],
   },
   {
     username: "Nick",
@@ -294,22 +293,21 @@ let users = [
 ];
 
 function login(email, password) {
-  for (let i=0; i < users.length; ++i) {
+  for (let i = 0; i < users.length; ++i) {
     if (users[i].email === email) {
       console.log(users[i]);
       if (users[i].password === password) {
-        console.log("log the user in - the details are correct")
-      }
-      else {
-        console.log("password is incorrect - try again")
+        console.log("log the user in - the details are correct");
+      } else {
+        console.log("password is incorrect - try again");
       }
       return;
     }
   }
-  console.log("could not find an email that matches")
+  console.log("could not find an email that matches");
 }
 
-login("david@fes.com", "test123")
+login("david@fes.com", "test123");
 
 function register(user) {
   users.push(user);
@@ -317,11 +315,38 @@ function register(user) {
 
 register({
   username: "zen",
-  email: "zen@fes.com", 
-  password: "zen123", 
-  subscriptionStatus: "VIP", 
-  discordId: "zenfrank", 
-  lessonsCompleted: [0, 1]
-})
+  email: "zen@fes.com",
+  password: "zen123",
+  subscriptionStatus: "VIP",
+  discordId: "zenfrank",
+  lessonsCompleted: [0, 1],
+});
 
 console.log(users);
+*/
+
+//DOM
+
+// First way of accessing an element
+//console.log(document.querySelector("#title"));
+
+//Second way of accessing an element
+//console.log(document.getElementById("title"));
+
+//Change HTML
+//console.log(document.querySelector(".title").innerHTML = "Frontend Simplified");
+
+//Change CSS
+//console.log(document.querySelector(".title").style.fontSize = "56px");
+
+//function changeTitleToRed() {
+  //document.querySelector(".title").style.color = "red"
+  //console.log("clicked")
+//}
+//How to toggle dark mode and light mode
+/**function toggleDarkMode() {
+  document.querySelector("body").classList.toggle("dark-theme")
+}
+  */
+
+//PROMISES
