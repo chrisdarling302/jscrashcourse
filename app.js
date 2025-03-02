@@ -340,8 +340,8 @@ console.log(users);
 //console.log(document.querySelector(".title").style.fontSize = "56px");
 
 //function changeTitleToRed() {
-  //document.querySelector(".title").style.color = "red"
-  //console.log("clicked")
+//document.querySelector(".title").style.color = "red"
+//console.log("clicked")
 //}
 //How to toggle dark mode and light mode
 /**function toggleDarkMode() {
@@ -350,3 +350,16 @@ console.log(users);
   */
 
 //PROMISES
+// console.log(fetch ("https://jsonplaceholder.typicode.com/users/1"))
+const emailRef = document.querySelector(".email");
+// 1. Then
+fetch("https://jsonplaceholder.typicode.com/users/1")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    emailRef.innerHTML = data.email
+  });
+
+// 2. Async/Await
