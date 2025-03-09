@@ -1,3 +1,5 @@
+//Is an element Falsy or Truthy
+
 function falsyOrTruthy(elem1, elem2) {
   //if (!elem1) if the opposite of elem1 is true, the next line of code will run
   //so elem1 needs to be false because the oppositive of that is true
@@ -61,10 +63,10 @@ console.log(progressiveSum(600));
 //Q6. Calculate the time
 
 function calcTime(seconds) {
-  let timerMinutes = Math.floor(seconds / 60);
-  let timerSeconds = seconds % 60;
+  let timerMinutes = Math.floor(seconds / 60); //Math.floor() rounds the number down
+  let timerSeconds = seconds % 60; //return seconds % 60; stored in a variable
 
-  if (timerMinutes.toString().length === 1) {
+  if (timerMinutes.toString().length === 1) { //can't do .length on a number so you have to convert it to a string. .toString() converts number to a string
     timerMinutes = "0" + timerMinutes;
     if (timerSeconds.toString().length === 1) {
       timerSeconds = "0" + timerSeconds;
@@ -80,12 +82,12 @@ console.log(calcTime(300));
 //Q7. Find the largest number
 
 function getMax(arr) {
-    let max = arr[1]
-    for (let i = 0; i < arr.length; ++i) {
+    let max = arr[0]
+    for (let i = 1; i < arr.length; ++i) {
         if (arr[i] > max)
         max = arr[i]
     }
-    return max
+    return max;
 }
 
 console.log(getMax([5, 100, 0]));
@@ -93,3 +95,71 @@ console.log(getMax([12, 10, -20]));
 console.log(getMax([-300, -100, -200]));
 
 //when you need to look at every element of an array, you make a for loop
+
+//Q8. Reverse a String
+
+//incrementing for loop:
+
+/** function reverseString(str) {
+  let reversedString = "";
+  for (let i = 0; i < str.length; ++i) {
+    //This is how you loop through every character of a string
+    reversedString = str[i] + reversedString;
+  }
+  return reversedString
+}
+  */
+
+//decrementing for loop (not used often, David never uses)
+
+/** function reverseString(str) {
+  let reversedString = "";
+  for (let i = str.length - 1; i >= 0; --i) {
+    reversedString += str[i]
+  }
+  return reversedString;
+}
+  */
+
+//use array reverse property
+//only an array has a reverse property
+//so to use reverse with a string you need to use str.split("") this converts it into an array
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+console.log(reverseString("abc"));
+console.log(reverseString("David"));
+console.log(reverseString("This is cool"));
+
+//Turn every element in an array into 0, Given an array of elements, return the same length array filled with 0's
+
+//using a for loop
+/** function convertToZeros(arr) {
+ for (i = 0; i < arr.length; ++i) {
+  arr[i] = 0
+ }
+ return arr;
+}
+ */
+
+//use Array .fill
+/** function convertToZeros(arr) {
+  return new Array(arr.length).fill(0);
+}
+
+*/
+
+//use Array .map Extremely important to understand this
+//map lets you map over every element in an array  arr.map(elem => elem * 2)
+//map converts every element in the array to what is on the right of =>
+
+function convertToZeros(arr) {
+ return arr.map(elem => 0);
+}
+
+
+console.log(convertToZeros([5, 100, 0]));
+console.log(convertToZeros([12]));
+console.log(convertToZeros([1, 2, 3, 4, 5]));
