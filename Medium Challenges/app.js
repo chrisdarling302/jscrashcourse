@@ -121,8 +121,8 @@ console.log(getMax([-300, -100, -200]));
 }
   */
 
-//use array reverse property
-//only an array has a reverse property
+//use array .reverse() property
+//only an array has a .reverse() property
 //so to use reverse with a string you need to use str.split("") this converts it into an array
 
 function reverseString(str) {
@@ -163,3 +163,62 @@ function convertToZeros(arr) {
 console.log(convertToZeros([5, 100, 0]));
 console.log(convertToZeros([12]));
 console.log(convertToZeros([1, 2, 3, 4, 5]));
+
+//Q10. Filter out all of the apples
+
+//using for for loop
+/**
+ *  function removeApples(arr) {
+  let noApples = []
+  for (i = 0; i < arr.length; ++i) {//looping through array
+   if (arr[i] !== "Apple") {//if current element is not equal to "Apple", not adding it to array
+    noApples.push(arr[i]);//how to add an element to an array, have to understand that push is needed to create the new array
+   }
+}
+return noApples
+}
+*/
+
+//using .filter method
+function removeApples(arr) {
+return arr.filter(elem => elem !== "Apple") //has an invisible return because there are no {}
+//filter is similar to .map method, simpler one line of code
+}
+
+console.log(removeApples(["Banana", "Apple", "Orange", "Apple"]));
+console.log(removeApples(["Tomato", "Apple", "Orange", "Banana"]));
+console.log(removeApples(["Banana", "Orange", "Apple"]));
+
+//Q11. Filter out all the falsy values
+
+//using .filter method
+/** 
+function filterOutFalsy(arr) {
+  return arr.filter(elem => !!elem === true)//return if boolean counterpart is true
+}
+*/
+
+//using a for loop
+function filterOutFalsy(arr) {
+  let noFalsy = []
+  for (i = 0; i < arr.length; ++i) {
+   if (!!arr[i] === true) {//if current array element is not false it === true, add it to the array
+    noFalsy.push(arr[i]);//how to add an element to an array, have to understand that push is needed to create the new array
+   }
+}
+return noFalsy;
+}
+
+
+console.log(filterOutFalsy(["", [], 0, null, undefined, "0"]));
+console.log(filterOutFalsy(["Tomato", "orange", "Banana", false]));
+console.log(filterOutFalsy(["Banana", "Orange", "Apple"]));
+
+//Q12. Truthy to true, Falsy to fals
+//Given an array of truthy and falsy values, return the same array of
+//elements into it's boolean value
+function convertToBoolean(arr) {
+  return arr.map(elem => !!elem)
+  }
+
+console.log(convertToBoolean([500, 0, "David", "", []])); //[true, false, true, false, true]
