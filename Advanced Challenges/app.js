@@ -97,3 +97,40 @@ console.log(sortHighToLow([
 
 //"Async JS Crash Course - Callbacks, Promises, Async Await"
 // - Travsery Media (1.5x speed, watch if still trying to understand promises)
+
+//Q5. Find all the posts by a single user
+//Call this API "https://jsonplaceholder.typicode.com/posts" and return
+//all the posts vby any given user id.
+
+//fetch "https://jsonplaceholder.typicode.com/posts"
+
+async function postsByUser(userId) {//async goes before the function
+    //await goes insidee the function before the promise you want to wait for
+   const promise = await fetch ("https://jsonplaceholder.typicode.com/posts");
+   const result = await promise.json()
+
+   const posts = result.filter(element => element.userId === userId)
+//if the property of userId is getting passed into the function, 
+//if those 2 are equal, pass it into the array. userId of 4 is getting passed
+//into the parameter of the function
+
+   console.log(posts)
+}
+
+postsByUser(4);
+
+//Q6. First 6 Incomplete Todos
+//Call this API "https://jsonplaceholder.typicode.com/todos" and
+//return the first 6 incomplete todo's from the result.
+
+async function firstSixIncomplete(userId) {
+    const promise = await fetch ("https://jsonplaceholder.typicode.com/todos")
+    
+    const result = await promise.json()
+
+    const incompleteTasks = result.filter(elem => !elem.completed).slice(0, 6);
+
+    console.log(incompleteTasks);
+}
+
+firstSixIncomplete(6)
